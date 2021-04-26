@@ -1,11 +1,12 @@
 .header{
-    background-color: palegoldenrod;
+    background-color: darkblue;
     padding: 10px;
-    color: black
 }
 
 h1 {
     float: right;
+    color: white;
+    font-family: 'Arial';
 }
 .table{
     clear: both;
@@ -33,7 +34,7 @@ h1 {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #4CAF50;
+    background-color: darkblue;
     color: white;
   }
   

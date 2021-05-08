@@ -12,6 +12,8 @@ var lengthInput = document.getElementById("option-length");
 var lowerCaseCharacters = "abcdefghijklmnopqrstuvwxyz";
 var symbolicCharacters = "!@#$%^&*()-_+={}[].,<>:;";
 
+darkMode = true;
+
 function passwordLengthValueChange(lengthValue) {
     passwordLength = lengthValue;
     lengthRangeInput.value = passwordLength;
@@ -115,4 +117,31 @@ function copyPassword(){
     window.getSelection().addRange(range);
     document.execCommand('copy');
     window.getSelection().removeAllRanges();
+}
+
+function changeMode(){
+    darkMode = !darkMode;
+    var body = document.getElementsByTagName("BODY")[0];
+    var displayBoard = document.getElementById("password-display");
+    var modeButton = document.getElementById("mode-button");
+    var lengthSlider = document.getElementById("option-length-range");
+    var lengthInput = document.getElementById("option-length");
+    if (!darkMode) {
+        body.style.backgroundColor = "#ffffff";
+        body.style.color = "#000000";
+        displayBoard.style.backgroundColor = "#ffffff";
+        modeButton.style.backgroundColor = "#ffffff";
+        lengthSlider.style.backgroundColor = "#ffffff";
+        lengthInput.style.backgroundColor = "#ffffff";
+        lengthInput.style.color = "#000000";
+    } else {
+        body.style.backgroundColor = "#000000";
+        body.style.color = "#dadada";
+        displayBoard.style.backgroundColor = "#212121";
+        modeButton.style.backgroundColor = "#000000";
+        lengthSlider.style.backgroundColor = "#000000";
+        lengthInput.style.backgroundColor = "#000000";
+        lengthInput.style.color = "#dadada";
+    }
+
 }

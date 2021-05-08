@@ -22,16 +22,18 @@
         </div>
         <div class="body">
             <div class="row">
-                <h3 class="options-text">Length</h3>
+                <h3 class="length-text">Length</h3>
                 <input type="range" class="option-length-slider" id="option-length-range" name="option-length-range" min="2" max="32" value="12" oninput="passwordLengthValueChange(this.value)">
                 <input type="number" class="option-length" id="option-length" name="option-length" min="2" max="32" value="12" oninput="passwordLengthValueChange(this.value)">
             </div>
             <div class="row">
-                <h3 class="options-text">Lowercase Letters</h3>
-                <label class="switch">
-                    <input type="checkbox" onchange="toggleValueChange('lowercase')" checked>
-                    <span class="slider round"></span>
-                </label>
+                <div class="options-lowercase">
+                    <h3 class="options-text">Lowercase Letters</h3>
+                    <label class="switch">
+                        <input type="checkbox" onchange="toggleValueChange('lowercase')" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
             </div>
             <div class="row">
                 <h3 class="options-text">Uppercase Letters</h3>

@@ -15,6 +15,8 @@ var symbolicCharacters = "!@#$%^&*()-_+={}[].,<>:;";
 darkMode = true;
 
 function passwordLengthValueChange(lengthValue) {
+    if (lengthValue>32) lengthValue = 32;
+    if (lengthValue<2) lengthValue = 2;
     passwordLength = lengthValue;
     lengthRangeInput.value = passwordLength;
     lengthInput.value = passwordLength;

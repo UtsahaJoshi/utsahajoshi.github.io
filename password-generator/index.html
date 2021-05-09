@@ -23,14 +23,14 @@
         <div class="body">
             <div class="row">
                 <h3 class="length-text">Length</h3>
-                <input type="range" class="option-length-slider" id="option-length-range" name="option-length-range" min="2" max="32" value="12" oninput="passwordLengthValueChange(this.value)">
-                <input type="number" class="option-length" id="option-length" name="option-length" min="2" max="32" value="12" oninput="passwordLengthValueChange(this.value)">
+                <input type="range" class="option-length-slider" step="0.1" id="option-length-range" name="option-length-range" min="2" max="32" value="12" oninput="passwordLengthValueChange(this.value)">
+                <input type="number" class="option-length" id="option-length" name="option-length" min="2" max="32" value="12" onchange="passwordLengthValueChange(this.value)">
             </div>
             <div class="row">
                 <div class="options-lowercase">
                     <h3 class="options-text">Lowercase Letters</h3>
                     <label class="switch">
-                        <input type="checkbox" onchange="toggleValueChange('lowercase')" checked>
+                        <input type="checkbox" id="lowercase-toggle" onchange="toggleValueChange('lowercase')" checked>
                         <span class="slider round"></span>
                     </label>
                 </div>
@@ -70,6 +70,9 @@
                 <button class="copy-btn" id="copy-button" onclick="copyPassword()">
                     COPY PASSWORD
                 </button>
+            </div>
+            <div class="row">
+                <p id="copied-notify-text">Copied!</p>
             </div>
         </div>
     </div>

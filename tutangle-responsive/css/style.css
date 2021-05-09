@@ -1,0 +1,507 @@
+.clear-fix{
+    overflow: hidden;
+}
+.logo-img{
+    height: 100%;
+    display: table;
+    float: left;
+    padding: 0px 10px;
+}
+.logo-img img {
+    margin: 20px auto;
+}
+
+.ham-burger-menu{
+    float: right;
+    margin: 35px;
+}
+
+.mobile-menu-nav{
+    background-color: #cceef7;
+    position: absolute;
+    right: 20px;
+    top: 70px;
+    z-index: 1;
+    display: none;
+    text-align: center;
+    padding: 10px;
+}
+
+.ham-burger-menu:hover + div{ 
+    display: block; 
+}
+.searchbar {
+    margin-left: 24px;
+    float: left;
+    display: none;
+}
+
+.searchbar-elements {
+    margin: 40px auto;
+    display: block;
+}
+
+.searchbar input {
+    float: left;
+    width: 230px;
+    height: 20px;
+    background-color: #cceef7;
+    font-size: 10px;
+    border: 0;
+}
+
+.search-border-radius-1 {
+    float:left;
+}
+
+.search-border-radius-2{
+    cursor: pointer;
+}
+
+.search-bar-cross {
+    float: left;
+    cursor: pointer;
+}
+.search-button {
+    display: none;
+    margin-left: 7px;
+    float: left;
+}
+.searchbutton-elements {
+    margin: 40px auto;
+    cursor: pointer;
+}
+.searchbutton-elements:hover button{
+    color: #000000;
+}
+
+.search-button button {
+    float: left;
+    background-color: #274d56;
+    width: 40px;
+    height: 20px;
+    font-size: 9px;
+    color: #ffffff;
+    cursor: pointer;
+    border: 0;
+}
+
+.search-button-border-radius-1 {
+    float:left;
+}
+
+.nav-info {
+    display: none;
+    float: right;
+    margin: 28px auto;
+}
+.user-nav{
+    float:right;
+}
+
+.user-nav ul li {
+    width: auto;
+    float: left;
+    padding: 0px 5px;
+    font-size: 11px;
+}
+
+.user-nav ul li:hover {
+    text-decoration: underline;
+}
+
+.user-nav ul li+li{
+	background: url(../images/separator.png) 0 50%;
+	background-repeat:no-repeat;
+}
+
+.user-name {
+    float: right;
+    font-size: 15px;
+    margin-bottom: 5px;
+    padding: 0px 5px;
+}
+.horizontal-menu-container{
+    display: none;
+}
+.user-options-container ul li {
+    float: left;
+    padding-right: 30px;
+    line-height: 15px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.user-options-container ul li:hover {
+    text-decoration: underline;
+}
+
+.user-notification-container {
+    float: right;
+}
+
+.user-notification-container ul li {
+    float: left;
+    font-size: 13px;
+    line-height: 15px;
+    cursor: pointer;
+}
+
+.user-notification-container ul li:hover {
+    text-decoration: underline;
+}
+
+.user-notification-container ul li:first-child {
+    background: url(../images/topic-boxes.png) no-repeat 0px;
+    padding-left: 18px;
+    margin-right: 31px;
+    height: 35%;
+}
+
+.user-notification-container ul li:first-child + li {
+    background: url(../images/friend-request.png) no-repeat 0px;
+    padding-left: 25px;
+    height: 35%;
+    color: #aaaaaa;
+}
+
+.user-notification-container ul li:first-child + li:hover {
+    color: #0000FF;
+}
+
+
+.block-title {
+    width: 100%;
+    height: 42px;
+    background-color: #2fc1da;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    line-height: 42px;
+    padding: 0px 0px;
+}
+
+.recent-search-list ul li{
+    font-size: 11px;
+    padding: 10px 2.5px;
+    display: table;
+    content: "";
+    width: 100%;
+}
+
+.recent-search-list ul li:hover{
+	background-color: #ffffff;
+}
+
+.recent-search-list ul li a:first-child{
+    width: 100%;
+    padding: 0px 8.5px;
+}
+
+.recent-search-list ul li a:first-child + a{
+    float: right;
+    margin-right: 20px;
+}
+
+
+.main-heading{
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.tabbed-content-holder{
+    width: 100%;
+    height: 100%;
+}
+
+.tab-container{
+    background-color: #d3d3d3;
+    width: 100%;
+    height: 10.5%;
+}
+
+.main {
+    width: 99%;
+    float: left;
+    padding: 0px 0px;
+}
+
+.all-entries{
+    float: left;
+    width: 50%;
+}
+
+.heading {
+    font-size: 12px;
+    text-align: center;
+    padding: 11px 0px;
+}
+.tabs ul{
+	list-style: none;
+	margin: 10px;
+	padding: 5px;
+}
+
+.tabs ul li{
+	width: 110px;
+	float: left;
+	margin: 5px 5px;
+	padding: 0px 2px;
+	background-image: url("../images/inactive-body-tab.png");
+	background-repeat: no-repeat;
+	font-size: 11px;
+}
+
+.tabs ul .active{
+	background-image: url("../images/active-body-tab.png");
+	background-repeat: no-repeat;
+	font-size: 11px;
+}
+
+.tabs ul li a{
+	display: block;
+	text-align: center;
+}
+
+.tabs ul .active a{
+	color: #ffffff;
+	display: block;
+}
+
+.tabs ul li a{
+	line-height: 28px;
+}
+
+.tabs ul li:hover{
+	background-image: url("../images/active-body-tab.png");
+	background-repeat: no-repeat;
+	color: #ffffff;
+	font-size: 11px;
+}
+
+.tabs ul li:hover a{
+	color: #ffffff;
+}
+
+.post-details h2{
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: bold;
+}
+
+.post-details ul{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	display: table;
+	font-size: 10px;
+	line-height: 20px;
+}
+
+.post-details ul li{
+	float: left;
+	padding: 0px 5px;
+}
+
+.post-details ul li:first-child{
+	padding: 0px 5px 0px 0px;
+}
+
+.post-details ul li+li{
+	background: url(../images/separator.png) 0 50%;
+	background-repeat:no-repeat;
+}
+
+.post-details ul li a{
+	color:#309db2;
+}
+
+.post-details ul li:first-child + li + li{
+	padding: 0px 0px 0px 5px;
+}
+
+.post-details ul li:first-child + li + li a{
+	color: #8fb057;
+}
+
+.post-details p{
+	font-size: 9px;
+	line-height: 20px;
+}
+
+.post-details p span{
+	color: #309db2;
+}
+
+.entry{
+	font-size: 11px;
+	line-height: 11px;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 11px;
+	color:#309db2;
+}
+
+.comment{
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 11px;
+	color:#309db2;
+}
+
+.hot-invite{
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 11px;
+	color:#d43e1b;
+}
+
+.footer-content-left{
+    margin-left: 20px;
+}
+
+.footer-content-left ul li{
+    float: left;
+    padding-right: 30px;
+    line-height: 60px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    display: none;
+}
+
+.footer-content-left ul li:hover{
+    text-decoration: underline;
+}
+
+.footer-content-left ul li:before{
+    content: "• ";
+}
+
+.footer-content-left ul li:first-child:before{
+    content:"";
+}
+
+.footer-content-right p {
+    float: right;
+    line-height: 60px;
+    color: #ffffff;
+    font-size: 11px;
+    margin-right: 20px;
+}
+@media screen and (min-width: 400px){
+    .tab-options-content{
+        margin-top: 65px;
+    }
+    .post-details p{
+        font-size: 13px;
+    }
+    .post-details ul{
+        font-size: 13px;
+    }
+    .post-details h2{
+        line-height: 24px;
+    }
+}
+@media screen and (min-width: 620px) {
+    .tab-options-content{
+        margin:0px;
+    }
+}
+@media screen and (min-width: 900px){
+    .searchbar {
+        display: block;
+    }
+    .search-button {
+        display: block;
+    }
+    .footer-content-left ul li{
+        display: block;
+    }
+    .right-container{
+        float: left;
+        width: 60%;
+    }
+    .extreme-right-container{
+        clear:none;
+        float: right;
+        width: 20%;
+        height:100%;
+        background-color: #f5f5f5;
+    }
+    .tabs ul{
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+    .tabs ul li{
+        margin: 0px 5px;
+    }
+    .extreme-right-container{
+        margin-right: 20px;
+    }
+}
+@media screen and (min-width: 1200px){
+    .nav-info{
+        display: block;
+    }
+    .ham-burger-menu{
+        display: none;
+    }
+    .user-options-container{
+        display: block;
+    }
+    .mobile-menu-nav{
+        visibility: collapse;
+    }
+    .header-content-container{
+        width: 65em;
+    }
+    .horizontal-menu-container{
+        display: block;
+    }
+    .menu-container{
+        width: 65em;
+    }
+    .body-content{
+        width: 65em;
+    }
+    .left-container{
+        display: block;
+        height: 100%;
+        width: 194px;
+        float:left;
+    }
+    .block-title {
+        width: 194px;
+        height: 42px;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0px 12px;
+    }
+    .recent-search-list ul li a:first-child{
+        float: left;
+        width: 137px;
+    }
+    .recent-search-list ul li a:first-child + a{
+        float: none;
+    }
+    
+    .tab-container {
+        background-color: #ffffff;
+        background-image: url(../images/main-back-image.png);
+        background-repeat: no-repeat;
+        width: 100%;
+    }
+    .right-container{
+        float: left;
+        width: 50%;
+    }
+    .extreme-right-container{
+        margin: 0px;
+    }
+    .footer-content{
+        width: 65em;
+    }
+}

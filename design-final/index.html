@@ -1,0 +1,267 @@
+
+<html>
+    <head>
+        <script type="text/javascript">
+            window.onload = function(){
+                document.getElementById('mobile-ham').onclick = function(){
+                    document.getElementById("mobile-menu-navigator-ham").style.display = "block";
+                }
+                document.getElementById('close-navigator').onclick = function(){
+                    document.getElementById("mobile-menu-navigator-ham").style.display = "none";
+                }
+            }           
+        </script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/layout.css" type="text/css">
+        <link rel="stylesheet" href="css/reset.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <title>Design Assignment</title>
+    </head>
+    <body>
+        <div class="header">
+            <div class="top-bar-container">
+                <div class="top-bar-contents">
+                    <div class="socials-content-container">
+                        <div class="social-icon-container">
+                            <span class="helper"></span>
+                            <div class="social-icon">
+                                <img src="images/icon-linkedin.png" alt="linkedin logo">
+                            </div>
+                        </div>
+                    <div class="social-icon-container">
+                        <span class="helper"></span>
+                        <div class="social-icon">
+                            <img src="images/icon-twitter.png" alt="twitter logo">
+                        </div>
+                    </div>
+                    <div class="social-icon-container">
+                        <span class="helper"></span>
+                        <div class="social-icon">
+                            <img src="images/icon-pinterest.png" alt="pinterest logo">
+                        </div>
+                    </div>
+                    <div class="social-icon-container">
+                        <span class="helper"></span>
+                        <div class="social-icon">
+                            <img src="images/icon-google-plus.png" alt="google plus logo">
+                        </div>
+                    </div>
+                    <div class="social-icon-container">
+                        <span class="helper"></span>
+                        <div class="social-icon">
+                            <img src="images/icon-rss.png" alt="rss icon">
+                        </div>
+                    </div>
+                    </div>
+                    <div class="user-navigation-container">
+                        <span class="helper"></span>
+                        <span class="helper"></span>
+                        <ul class="user-navigation-unordered-list">
+                            <li class="user-navigation-unordered-list-item">Sign Up</li>
+                            <li class="user-navigation-unordered-list-item">Log In</li>
+                            <li class="user-navigation-unordered-list-item">RSS Feeds</li>
+                            <li class="user-navigation-unordered-list-item">Archived News</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="toggle-top-bar">
+                    <span class="helper"></span>
+                    <div class="Minus"></div>   
+                </div>
+            </div>
+            <div class="menu-bar-container">
+                <div class="menu-bar">
+                    <div class="site-title-container">
+                        <ul class="site-title">
+                            <li class="site-title-ul-item">IMAGINATIVE</li>
+                            <li class="site-title-ul-item">
+                                <ul class="site-title-second-ul">
+                                    <li class="site-title-second-ul-item">Free PSD</li>
+                                    <li class="site-title-second-ulitem">Website Template</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="search-bar-container">
+                        <input class="search-input" placeholder="Search Our Website...">
+                        <button class="search-button">SUBMIT</button>
+                    </div>
+                    <div class="main-menu-container clearfix">
+                        <ul class="menu-content">
+                            <li class="menu-content-item">HOME</li>
+                            <li class="menu-content-item">STYLE DEMO</li>
+                            <li class="menu-content-item">FULL WIDTH</li>
+                            <li class="menu-content-item">DROPDOWN</li>
+                            <li class="menu-content-item">PORTFOLIO</li>
+                            <li class="menu-content-item">GALLERY</li>
+                            <li class="menu-content-item">LONG TEXT LINK</li>
+                        </ul>
+                    </div>
+                    <div class="main-menu-mobile-button clearfix">
+                        <img class="main-menu-mobile-button-image clearfix" id="mobile-ham" src = "images/ham.png" alt="ham burger menu for mobile" width="50px" height="50px">
+                        <div class="mobile-menu-navigator" id="mobile-menu-navigator-ham">
+                            <ul class="menu-content">
+                                <li class="menu-content-item">HOME</li>
+                                <li class="menu-content-item">STYLE DEMO</li>
+                                <li class="menu-content-item">FULL WIDTH</li>
+                                <li class="menu-content-item">DROPDOWN</li>
+                                <li class="menu-content-item">PORTFOLIO</li>
+                                <li class="menu-content-item">GALLERY</li>
+                                <li class="menu-content-item">LONG TEXT LINK</li>
+                                <li class="menu-content-item">RSS FEEDS</li>
+                                <li class="menu-content-item">ARCHIVED NEWS</li>
+                            </ul>
+                            <div class="close-navigator" id="close-navigator">CLOSE</div>
+                            <p class="template-text">Template by OS Templates</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-body-container">
+            <div class="slider">
+                <img class="slider-image" src="images/tech.jpeg" alt="image for slider, category: technology, coding">
+                <div class="slider-dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot-active"></span>
+                </div>
+            </div>
+            <div class="content1">
+                <h1 class="content1-title"><span>YOUR TITLE HERE</span></h1>
+                <div class="content1-container">
+                    <div class="content-details">
+                        <img class="content-detail-image" src="images/service.png" width="64px" height="64px" alt="small size image of someone using a device">
+                        <h3 class="content-detail-title">Lorem Ipsum Dolor</h3>
+                        <p class="content-detail-description">Orciinterdum condimenterdum nullamcorper elit nam curabitur laoreet met praesenean et iac.</p>
+                    </div>
+                    <div class="content-details">
+                        <img class="content-detail-image" src="images/small.jpeg" alt="small size image of someone using a device">
+                        <h3 class="content-detail-title">Lorem Ipsum Dolor</h3>
+                        <p class="content-detail-description">Orciinterdum condimenterdum nullamcorper elit nam curabitur laoreet met praesenean et iac.</p>
+                    </div>
+                    <div class="content-details">
+                        <img class="content-detail-image" src="images/small.jpeg" alt="small size image of someone using a device">
+                        <h3 class="content-detail-title">Lorem Ipsum Dolor</h3>
+                        <p class="content-detail-description">Orciinterdum condimenterdum nullamcorper elit nam curabitur laoreet met praesenean et iac.</p>
+                    </div>
+                </div>
+                <div class="content1-container">
+                    <div class="content-details">
+                        <img class="content-detail-image" src="images/small.jpeg" alt="small size image of someone using a device">
+                        <h3 class="content-detail-title">Lorem Ipsum Dolor</h3>
+                        <p class="content-detail-description">Orciinterdum condimenterdum nullamcorper elit nam curabitur laoreet met praesenean et iac.</p>
+                    </div>
+                    <div class="content-details">
+                        <img class="content-detail-image" src="images/small.jpeg" alt="small size image of someone using a device">
+                        <h3 class="content-detail-title">Lorem Ipsum Dolor</h3>
+                        <p class="content-detail-description">Orciinterdum condimenterdum nullamcorper elit nam curabitur laoreet met praesenean et iac.</p>
+                    </div>
+                    <div class="content-details">
+                        <img class="content-detail-image" src="images/small.jpeg" alt="small size image of someone using a device">
+                        <h3 class="content-detail-title">Lorem Ipsum Dolor</h3>
+                        <p class="content-detail-description">Orciinterdum condimenterdum nullamcorper elit nam curabitur laoreet met praesenean et iac.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content2">
+                <div class="content2-left">
+                    <h1 class="content1-title"><span>YOUR TITLE HERE</span></h1>
+                    <div class="content2-left-details">
+                        <img class="content2-left-detail-image" src = "images/people.jpeg" alt="round image of a man playing golf">
+                        <div class="content2-left-detail-texts">
+                            <h3 class="content2-left-detail-title">Title Goes Here</h3>
+                            <p class="content2-detail-description">Vestibulumaccumsan egestibulum eu justo convallis augue estas aenean elit intesque sed. Facilispede estibulum nulla orna nisl velit elit ac aliquat non tincidunt.</p>
+                            <a href="#" class="content2-detail-clickable1">Read More ></a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="content2-right">
+                    <h1 class="content1-title"><span>YOUR TITLE HERE</span></h1>
+                    <div class="content2-right-details">
+                        <img class="content2-right-detail-image" src = "images/quotes.png" alt="fancy image of the double quotation sign">
+                        <div class="content2-right-detail-texts">
+                            <h3 class="content2-right-detail-title">Tommy Tanker - CEO</h3>
+                            <a href="#" class="content2-detail-clickable2">View This Project></a>
+                        </div>
+                        <p class="content2-detail-description">Justoid nonummy laoreet phasellent penatoque in antesque pellus elis eget tincidunt. Nequatdui laorem justo a non tellus laoreet tincidunt ut vel velit. Idenim semper pellente velis felit ac nullam pretium morbi lacus.</p>
+                    </div>
+                </div>
+                <div class="content3-bottom clearfix">
+                    <div class="content3-bottom-text">
+                        <h2 class="content3-bottom-title">Orciinterdum Corper Elit Nam ?</h2>
+                        <p class="content3-bottom-description">Orciinterdum condimen urabitur laoreet met praesenean et iac !</p>
+                    </div>
+                    <div class="content3-bottom-button">
+                        <div class="content3-button">
+                            CONTACT US TODAY
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+         <div class="footer-container clearfix">
+             <div class="footer-bg">
+                <div class="footer">
+                    <div class="footer-top">
+                        <div class="footer-latest-blogs">
+                            <p class="footer-blog-main-title">Latest From The Blog</p>
+                            <div class="footer-blog-content">
+                                <img class="footer-blog-content-image" src="images/any.jpeg" alt="image of someone using a phone">
+                                <div class="footer-blog-texts">
+                                    <p class="footer-blog-title">Metuervestas mus lacinia</p>
+                                    <p class="footer-blog-description">Convallisijusto vestas mus pellentum aeneansa pibu lum in aliquam volut pat integest nulla. Acsed sed nunc at fring maurisusce at elis ut vitae laorem.</p>
+                                </div>
+                            </div>
+                            <div class="footer-blog-content clearfix">
+                                <img class="footer-blog-content-image" src="images/any.jpeg" alt="image of someone using a phone">
+                                <div class="footer-blog-texts">
+                                    <p class="footer-blog-title">Metuervestas mus lacinia</p>
+                                    <p class="footer-blog-description">Convallisijusto vestas mus pellentum aeneansa pibu lum in aliquam volut pat integest nulla. Acsed sed nunc at fring maurisusce at elis ut vitae laorem.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact">
+                            <div class="company-details">
+                                <p class="company-details-title">Company Details</p>
+                                <div class="address">
+                                    <p class="company-name">Company Name</p>
+                                    <p class="company-street-name-number">Street Name & Number</p>
+                                    <p class="company-town">Town</p>
+                                    <p class="company-postcode">Postcode/Zip</p> 
+                                </div>
+                                <div class="phone">
+                                    <p class="company-tel">Tel: xxxxx xxxxxxxxxx</p>
+                                    <p class="company-fax">Fax: xxxxx xxxxxxxxxx</p>
+                                    <p class="company-email">Email: <a href="#">contact@mydomain.com</a></p>
+                                </div>
+                                <div class="office-hours-detail">
+                                    <p class="office-hours-title">Office Hours</p>
+                                    <p class="office-hours-regular">Monday - Friday: 08:00 - 17:30</p>
+                                    <p class="office-hours-extra">Saturday: 08:00 - 13:00</p>
+                                </div>
+                            </div>
+                            <div class="contact-form">
+                                <p class="contact-form-title">Contact Us</p>
+                                <input class="name-input" placeholder="Name">
+                                <br class="input-padding">
+                                <input class="email-input" placeholder="Email">
+                                <br>
+                                <input class="message-input" placeholder="Message">
+                                <br>
+                                <button class="contact-submit-btn">SUBMIT</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom clearfix">
+                        <p class="footer-left-text">Copyright © 2013 - All Rights Reserved - Domain Name</p>
+                        <p class="footer-right-text">Template by OS Templates</p>
+                    </div>
+                </div>
+             </div>
+         </div>
+    </body>
+</html>

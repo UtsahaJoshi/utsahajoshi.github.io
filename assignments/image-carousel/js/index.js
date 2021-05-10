@@ -1,0 +1,1 @@
+const carouselContainer = document.createElement("div");

@@ -193,12 +193,14 @@ function ImageCarousel(){
 window.addEventListener("load", () => {
     var carouselContainers = document.getElementsByClassName("carousel-container");
     var imageCarouselArray = [];
+    var animationTime = 0;
     for (var i = 0; i < carouselContainers.length; i++) {
         var element = carouselContainers.item(i);
         var image = element.getElementsByTagName('img')[0];
         var imageWidth = image.clientWidth;
         var animationTime = element.dataset.animationTime;
-        console.log(image);
+        //set default incase dataset not found
+        if (animationTime === 0) animationTime = 500;
         imageCarouselArray[i] = new ImageCarousel();
         imageCarouselArray[i].createCarousel(element, imageWidth, animationTime);
     }

@@ -1,0 +1,20 @@
+
+.carousel-container{
+    overflow: hidden;
+    position: relative;
+    visibility: hidden;
+}
+.image-wrapper{
+    display: flex;
+}
+.slider-image{
+    float: left;
+}
+.prev{
+    position: absolute;
+    top: 20px;
+    color: #fff;
+}
+.slider-dot-selected{
+    background-color : #717171;
+}

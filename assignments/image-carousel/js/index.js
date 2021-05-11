@@ -13,6 +13,7 @@ function ImageCarousel(){
         this.element.style.textAlign = "center";
         this.currentImageIndex = 1;
         var self = this;
+        this.isChangingSlide = false;
         
 
         //create previous and next buttons
@@ -27,8 +28,16 @@ function ImageCarousel(){
         previousArrow.style.fontSize = this.imageWrapper.clientHeight/10 +"px";
         previousArrow.style.fontFamily = "cursive";
         previousArrow.style.cursor = "pointer";
+        previousArrow.onmouseover = function() 
+        {
+            this.style.color = "#717171";
+        }
+        previousArrow.onmouseleave = function() 
+        {
+            this.style.color = "#ffffff";
+        }
         previousArrow.onclick = function() {
-            changeSlide(-1, self);
+            if (!self.isChangingSlide) changeSlide(-1, self);
         }
         this.element.appendChild(previousArrow);
 
@@ -43,8 +52,17 @@ function ImageCarousel(){
         nextArrow.style.fontSize = this.imageWrapper.clientHeight/10 +"px";
         nextArrow.style.fontFamily = "cursive";
         nextArrow.style.cursor = "pointer";
+        nextArrow.onmouseover = function() 
+        {
+            this.style.color = "#717171";
+        }
+        nextArrow.onmouseleave = function() 
+        {
+            this.style.color = "#ffffff";
+        }
         nextArrow.onclick = function() {
-            changeSlide(1, self);
+            console.log(self.isChangingSlide)
+            if (!self.isChangingSlide) changeSlide(1, self);
         }
         this.element.appendChild(nextArrow);
 
@@ -54,10 +72,11 @@ function ImageCarousel(){
         sliderDotsContainer.style.bottom = "20px";
         sliderDotsContainer.style.left = this.width / 2 - this.totalImages * 25 / 2 + "px";
         this.element.appendChild(sliderDotsContainer);
-        var dots = [];
+        this.dots = [];
 
         for (var i = 0; i < this.totalImages; i++){
             let dot = document.createElement('span');
+            dot.className = "slider-dots";
             dot.id = "slider-dot" + i;
             dot.style.cursor= "pointer";
             dot.style.height = "15px";
@@ -67,8 +86,9 @@ function ImageCarousel(){
             dot.style.borderRadius = "50%";
             dot.style.display = "inline-block";
             dot.style.transition = "background-color 0.6s ease";
-            if (i === this.currentImageIndex) {
-                dot.className = "slider-dot-selected";
+            if (i === 0) {
+                dot.style.backgroundColor = "#717171";
+                dot.classList.add("slider-dot-selected");
             }
             dot.onmouseover = function() 
             {
@@ -80,8 +100,11 @@ function ImageCarousel(){
                     this.style.backgroundColor = "#bbbbbb";
                 }
             }
-            dot.onclick = selectSliderDot(dots, dot);
-            dots.push(dot);
+            dot.onclick = function() {
+                selectSliderDot(self, dot);
+                this.isChangingSlide = true;
+            }
+            this.dots.push(dot);
             sliderDotsContainer.appendChild(dot);
         }
     }
@@ -89,18 +112,36 @@ function ImageCarousel(){
     //private functions
 
     //select slider dots
-    var selectSliderDot = function(dots, selectedDot){
-        for (dot in dots) {
-            if (dots[dot].classList.contains("slider-dot-selected")){
-                dots[dot].classList.remove("slider-dot-selected");
-                dots[dot].style.backgroundColor = "#bbbbbb";
+    var selectSliderDot = function( self, selectedDot = null){
+        var selectedDot = selectedDot;
+        if (selectedDot === null) {
+            let dotIndex = self.currentImageIndex - 1;
+            selectedDot = document.getElementById("slider-dot" + dotIndex);
+            console.log("hi", dotIndex, selectedDot, self.dots)
+        }
+        for (var dot in self.dots) {
+            if (self.dots[dot].classList.contains("slider-dot-selected")){
+                self.dots[dot].classList.remove("slider-dot-selected");
+                self.dots[dot].style.backgroundColor = "#bbbbbb";
+                console.log("what is", self.dots[dot])
+            }
+            if (self.dots[dot] === selectedDot) {
+                let direction = 0;
+                var changeTo = Number(dot) + 1;
+                if (changeTo != self.currentImageIndex) {
+                    direction = changeTo > self.currentImageIndex ? 1 : -1;
+                    changeSlide(direction, self, changeTo)
+                    self.isChangingSlide = true;
+                }
             }
         }
-        selectedDot.className = "slider-dot-selected";
+        selectedDot.classList.add("slider-dot-selected");
+        selectedDot.style.backgroundColor = "#717171";
     }
 
     //change the slide
-    var changeSlide = function(direction, self){
+    var changeSlide = function(direction, self, changeTo = null){
+        self.isChangingSlide = true;
         var moveLength = 10;
         var incrementMoveLength = 10;
         var totalIntervals = self.width/ 10;
@@ -108,7 +149,6 @@ function ImageCarousel(){
         var widthPerSlide = self.imageWrapper.clientWidth - self.width;
         var direction = direction;
         var currentPosition = (self.currentImageIndex - 1) * self.width;
-        console.log(currentPosition);
         if (direction === 1 && self.currentImageIndex === self.totalImages) {
             self.currentImageIndex = 1;
             intervalTime = 10;
@@ -126,6 +166,14 @@ function ImageCarousel(){
             self.currentImageIndex += direction;
             widthPerSlide = self.width;
         }
+
+        if (changeTo) {
+            widthPerSlide = self.width + Math.abs(self.currentImageIndex - changeTo) * self.width;
+            self.currentImageIndex = changeTo;
+            intervalTime = 10;
+            moveLength = 50;
+            incrementMoveLength = 50;
+        }
         var timer = setInterval(function() {
 
             self.imageWrapper.style.transform = "translate("+ (-currentPosition + (-direction * moveLength)) +"px, 0px)";
@@ -134,9 +182,11 @@ function ImageCarousel(){
             console.log(moveLength, widthPerSlide)
             if (moveLength > widthPerSlide) {
                 clearInterval(timer);
+                self.isChangingSlide = false;
                 return;
             }
         }, intervalTime)
+        selectSliderDot(self);
     }
 }
 

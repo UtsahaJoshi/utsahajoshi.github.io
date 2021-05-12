@@ -80,8 +80,8 @@ function smashAnt(event){
     var mouseX = event.clientX;
     var mouseY = event.clientY;
     for(var i=0; i<balls.length; i++) {
-        if (mouseX>=balls[i].position[0] && mouseX<=balls[i].position[0] + (2*balls[i].radius)){
-            if (mouseY>=balls[i].position[1] && mouseY<=balls[i].position[1] + (2*balls[i].radius)){
+        if (mouseX>=balls[i].position[0] && mouseX<=balls[i].position[0] + (balls[i].radius)){
+            if (mouseY>=(balls[i].position[1]+(balls[i].radius-(balls[i].radius/2))) && mouseY<=balls[i].position[1] + (1.5*balls[i].radius)){
                 balls.splice(i,1);
                 score++;
             }

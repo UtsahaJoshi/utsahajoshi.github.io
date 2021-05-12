@@ -52,7 +52,7 @@ var balls = [];
 var colors = ["#2b2b2b", "#ff0000", "#27408b", "#ff00ff", "#8b4513", "#9b9b9b"];
 var radius_max = 50; // radius max will actually be RADIUS_MAX + RADIUS_MIN
 var radius_min = 15;
-var speed_max = 1;  // speed max will actually be RADIUS_MAX + RADIUS_MIN
+var speed_max = 3;  // speed max will actually be RADIUS_MAX + RADIUS_MIN
 var speed_min = 1;
 var score = 0;
 

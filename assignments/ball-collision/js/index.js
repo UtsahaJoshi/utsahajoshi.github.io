@@ -47,8 +47,8 @@ var ctx = canvas.getContext('2d');
 var totalBalls = 1000;
 var balls = [];
 var colors = ["#2b2b2b", "#ff0000", "#27408b", "#ff00ff", "#8b4513", "#9b9b9b"];
-var radius_max = 4; // radius max will actually be RADIUS_MAX + RADIUS_MIN
-var radius_min = 4;
+var radius_max = 5; // radius max will actually be RADIUS_MAX + RADIUS_MIN
+var radius_min = 2;
 var speed_max = 1;  // speed max will actually be RADIUS_MAX + RADIUS_MIN
 var speed_min = 1;
 
@@ -110,15 +110,15 @@ function collisionDetectionWithBalls(index){
                 // Prevent overlaps
                 if (xVelocityDiff * xDist + yVelocityDiff * yDist >= 0) {
 
-                    let angle = Math.atan2(dy, dx);
-                    let sin = Math.sin(angle);
-                    let cos = Math.cos(angle);
+                    var angle = Math.atan2(dy, dx);
+                    var sin = Math.sin(angle);
+                    var cos = Math.cos(angle);
     
-                    let vx1 = (balls[index].xspeed * cos + balls[index].yspeed * sin);
-                    let vy1 = (balls[index].yspeed * cos - balls[index].xspeed * sin);
+                    var vx1 = (balls[index].xspeed * cos + balls[index].yspeed * sin);
+                    var vy1 = (balls[index].yspeed * cos - balls[index].xspeed * sin);
                     
-                    let vx2 = (balls[i].xspeed * cos + balls[i].yspeed * sin);
-                    let vy2 = (balls[i].yspeed * cos - balls[i].xspeed * sin);
+                    var vx2 = (balls[i].xspeed * cos + balls[i].yspeed * sin);
+                    var vy2 = (balls[i].yspeed * cos - balls[i].xspeed * sin);
                     
                     // new xspeed and yspeed assigned after collision computation
                     balls[index].xspeed = vx2 * cos - vy1 * sin;

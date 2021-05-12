@@ -1,4 +1,6 @@
-// Create ball class
+// Ant Smasher re-uses the Ball class
+
+// Create Ball class
 function Ball(){
 
     // Function to instantiate a ball with properties
@@ -24,7 +26,7 @@ function Ball(){
                 var dx = positionX - balls[i].position[0];
                 var dy = positionY - balls[i].position[1];
                 var distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance <= balls[i].radius + radius) {
+                if (distance < balls[i].radius + radius) {
                     let pos = getRandomPosition(balls, radius);
                     return pos
                 }

@@ -102,14 +102,14 @@ function collisionDetectionWithBalls(index){
             var distance = Math.sqrt(dx * dx + dy * dy);
 
             // If statement for collision confirmation using distance formula
-            if (distance <= (balls[index].radius + balls[i].radius)) {
+            if (distance < (balls[index].radius + balls[i].radius)) {
                 const xVelocityDiff = balls[index].xspeed - balls[i].xspeed;
                 const yVelocityDiff = balls[index].yspeed - balls[i].yspeed;
                 const xDist = balls[i].position[0] - balls[index].position[0];
                 const yDist = balls[i].position[1] - balls[index].position[1];
-            
                 // Prevent overlaps
                 if (xVelocityDiff * xDist + yVelocityDiff * yDist >= 0) {
+
                     let angle = Math.atan2(dy, dx);
                     let sin = Math.sin(angle);
                     let cos = Math.cos(angle);

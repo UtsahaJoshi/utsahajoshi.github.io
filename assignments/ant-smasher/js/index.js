@@ -70,11 +70,7 @@ function drawCanvas(){
     var img = document.querySelector('.antImage');
     for(var i=0; i<balls.length; i++){
         ctx.beginPath();
-        // ctx.arc(balls[i].position[0], balls[i].position[1], balls[i].radius, 0, 2 * Math.PI);
-        // ctx.fillStyle = balls[i].color;
-        // ctx.fill();
         ctx.drawImage(img, balls[i].position[0], balls[i].position[1], balls[i].radius, balls[i].radius);
-
     }
 }
 

@@ -96,6 +96,7 @@ function ballWallCollide(ball){
 // Ball collision logic
 function collisionDetectionWithBalls(index){
     for(var i = 0; i<balls.length; i++){
+        if (index != i){
             var dx = balls[i].position[0] - balls[index].position[0];
             var dy = balls[i].position[1] - balls[index].position[1];
             var distance = Math.sqrt(dx * dx + dy * dy);
@@ -126,6 +127,7 @@ function collisionDetectionWithBalls(index){
                     balls[i].yspeed = vy2 * cos + vx1 * sin;
                 }
             }
+        }
     }
 }
 

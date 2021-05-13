@@ -88,7 +88,7 @@ function menuLogic(){
         }
 
         for (var i=0; i<2; i++){
-            vehicles[i].drawVehicle(ctx, i, vehicles, playerObj.speed);
+            vehicles[i].drawVehicle(ctx, i, vehicles);
         }
     }
 

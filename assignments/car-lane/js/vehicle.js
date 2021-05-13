@@ -38,8 +38,7 @@ function Vehicle(){
     }.bind(this);
 
     //draw vehicle to the canvas
-    this.drawVehicle = function(ctx, index, vehicles, speed){
-        this.speed = speed;
+    this.drawVehicle = function(ctx, index, vehicles){
         if(this.positionY>this.canvas.height + this.sizeY){
             this.positionY = -this.sizeY * (Math.floor(Math.random()*3)+1)
             this.lane = Math.floor(Math.random() * 3);

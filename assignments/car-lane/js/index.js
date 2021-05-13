@@ -34,6 +34,7 @@ var startScreen = document.getElementById("start-screen");
 var gameOverScreen = document.getElementById("game-over-screen");
 var gameOverText = document.getElementById("game-over-text");
 var fireBulletText = document.getElementById("fire-bullet-text");
+var loading = document.getElementById("loading");
 
 var vehicles;
 var gameOver = false;
@@ -164,11 +165,15 @@ function drawAndMoveRoad(){
 }
 window.onload = function(){
     requestAnimationFrame(drawCanvas)
+    loading.style.display = "none";
 }
 
 // get keydown for user input computation
 window.addEventListener('keydown', function(event) {
     const key = event.key;
+    
+    scoreBoard.style.display = "block";
+    highScoreBoard.style.display = "block";
 
     if(!startGame) {
         startGame = true;

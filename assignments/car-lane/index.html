@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Car Lane Game</title>
+</head>
+<body>
+    <h1 id="score">Score:</h1>
+    <h1 id="high-score">High Score:</h1>
+    <div id="start-screen">
+        <h1>
+            How To Play
+        </h1>
+        <div id="instructions">
+            <p>1. Dodge the cars using the arrow keys.</p>
+            <p>2. You get a bullet after every 5 point earned.</p>
+            <p>3. Press space bar to release the bullet.</p>
+            <p>4. Speed increases as time passes.</p>
+        </div>
+        <h2>Press any key to start!</h2>
+    </div>
+    <div id="game-over-screen">
+        <h1>GameOver</h1>
+        <p id="game-over-text"></p>
+        <h2 id="replay-text">Press enter key to restart!</h2>
+    </div>
+    <div id="fire-bullet-screen">
+        <h3 id="fire-bullet-text">Press spacebar to fire!</h3>
+    </div>
+    <div class="image-assets">
+        <img class="main-car" src="images/main-car.png" />
+        <img class="road-img" src="images/road.png" />
+        <img class="police-car" src="images/police.png" />
+        <img class="ambulance" src="images/ambulance-car-top-view-vector-6441313-removebg.png" />
+        <img class="truck" src="images/Truck-Top.png" />
+        <img class="silver-car" src="images/silver-car.png" />
+        <img class="shiny-car" src="images/shiny-car.png" />
+        <img class = "bullet" src="images/rocket.png">
+    </div>
+    <script src="js/car.js"></script>
+    <script src="js/vehicle.js"></script>
+    <script src="js/bullet.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

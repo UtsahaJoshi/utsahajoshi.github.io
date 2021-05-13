@@ -1,0 +1,168 @@
+
+var canvas = document.createElement("canvas");
+canvas.id = 'canvas';
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+document.body.appendChild(canvas);
+var road1PositionY = 0;
+var road2PositionY = -canvas.height;
+
+var ctx = canvas.getContext("2d");
+
+var imageAssets = document.getElementsByClassName("image-assets");
+var allAssets = imageAssets[0].children;
+
+var playerObj = new Car();
+playerObj.carInstance(canvas);
+
+var totalScore = 0;
+var highScore = 0;
+if (localStorage.getItem('highscore')){
+    highScore = localStorage.getItem('highscore');
+}
+var bullet = false;
+var bulletFired = false;
+var bulletLoader = 0;
+var bulletMoving = false;
+var bulletObj;
+
+var scoreBoard = document.getElementById("score");
+var highScoreBoard = document.getElementById("high-score");
+var startScreen = document.getElementById("start-screen");
+var gameOverScreen = document.getElementById("game-over-screen");
+var gameOverText = document.getElementById("game-over-text");
+var fireBulletText = document.getElementById("fire-bullet-text");
+
+var vehicles;
+var gameOver = false;
+var startGame = false;
+createVehicles();
+
+function createVehicles() {
+    vehicles = [];
+    for (var i=0; i<2; i++){
+        vehicles[i] = new Vehicle();
+        vehicles[i].vehicleInstance(i, vehicles, allAssets, canvas, "up", 5)
+    }
+}
+
+
+function drawCanvas(){
+    scoreCalc();
+    scoreBoard.innerText = "SCORE: " + totalScore;
+    highScoreBoard.innerText = "HIGH SCORE: " + highScore;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    drawAndMoveRoad();
+
+    if(bulletLoader === 5){
+        bullet = true;
+        bulletLoader = 0;
+        fireBulletText.style.display = "block";
+        fireBulletText.innerText = "Press space bar to fire!";
+    }
+
+    if(bulletFired){
+        bulletObj = new Bullet();
+        bulletObj.bulletInit(canvas, playerObj.positionX);
+        bulletFired = false;
+        bulletMoving = true;
+    }
+
+    playerObj.drawPlayerCar(ctx, allAssets[0]);
+
+    if(bulletMoving){
+        if(bulletObj.positionY >= -bulletObj.sizeY){
+            bulletObj.drawBullet(ctx, allAssets[7]);
+            (bulletObj.collision(vehicles)) ? bulletMoving = false : 1;
+        } else {
+            bulletMoving = false;
+        }
+    }
+
+    if (!gameOver && startGame){
+        if(playerObj.collision(vehicles)){
+            gameOver = true;
+            createVehicles();
+            if (totalScore>localStorage.getItem('highscore')) {
+                console.log('highscore')
+                localStorage.setItem('highscore', totalScore);
+            }
+            totalScore = 0;
+            bullet = false;
+            bulletFired = false;
+            bulletMoving = false;
+            bulletLoader = 0;
+        }
+        for (var i=0; i<2; i++){
+            vehicles[i].drawVehicle(ctx, i, vehicles);
+        }
+    }
+    if (!startGame) {
+        startScreen.style.display = "block";
+    }
+    if(gameOver) {
+        gameOverScreen.style.display = "block";
+        gameOverText.innerText = "Your highscore is " + highScore +". Come on! You can beat it. Play again!";
+    }
+    requestAnimationFrame(drawCanvas)
+}
+
+function scoreCalc(){
+    for (var i=0; i<2; i++){
+        if(vehicles[i].positionY>canvas.height + vehicles[i].sizeY){
+            totalScore++;
+            if(!bullet) {
+                bulletLoader++;
+            }
+        }
+    }
+    if (totalScore>highScore) highScore = totalScore;
+}
+
+function drawAndMoveRoad(){
+    road1PositionY += playerObj.speed;
+    road2PositionY += playerObj.speed;
+    if (road1PositionY > canvas.height){
+        road1PositionY = -canvas.height;
+        road2PositionY = 0;
+    }
+    if (road2PositionY > canvas.height){
+        road2PositionY = -canvas.height;
+        road1PositionY = 0;
+    }
+    ctx.drawImage(allAssets[1], canvas.width/2-(canvas.width/6), road1PositionY, canvas.width/3, canvas.height);
+    ctx.drawImage(allAssets[1], canvas.width/2-(canvas.width/6), road2PositionY, canvas.width/3, canvas.height);
+}
+
+
+requestAnimationFrame(drawCanvas)
+
+window.addEventListener('keydown', function(event) {
+    const key = event.key;
+    if(!startGame) {
+        startGame = true;
+        startScreen.style.display = "none";
+    }
+    if (startGame && !gameOver){
+        switch(key){
+            case "ArrowRight":
+                playerObj.switchLane("right");
+                break;
+            case "ArrowLeft":
+                playerObj.switchLane("left");
+                break;
+            case " ":
+                if(bullet){
+                    bullet = false;
+                    bulletFired = true;
+                    fireBulletText.style.display = "none";
+                    break;
+                }
+        }
+    }
+    if(gameOver && key == "Enter"){
+        gameOver = false;
+        gameOverScreen.style.display = "none";
+    }
+});

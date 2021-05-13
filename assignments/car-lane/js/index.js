@@ -85,7 +85,7 @@ function menuLogic(){
             bulletMoving = false;
             bulletLoader = 0;
         }
-        
+
         for (var i=0; i<2; i++){
             vehicles[i].drawVehicle(ctx, i, vehicles);
         }
@@ -162,8 +162,9 @@ function drawAndMoveRoad(){
     ctx.drawImage(allAssets[1], canvas.width/2-(canvas.width/6), road1PositionY, canvas.width/3, canvas.height);
     ctx.drawImage(allAssets[1], canvas.width/2-(canvas.width/6), road2PositionY, canvas.width/3, canvas.height);
 }
-
-requestAnimationFrame(drawCanvas)
+window.onload = function(){
+    requestAnimationFrame(drawCanvas)
+}
 
 // get keydown for user input computation
 window.addEventListener('keydown', function(event) {

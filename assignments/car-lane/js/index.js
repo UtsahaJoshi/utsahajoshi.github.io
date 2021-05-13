@@ -73,23 +73,28 @@ function menuLogic(){
         if(playerObj.collision(vehicles)){
             gameOver = true;
             createVehicles();
+
             if (totalScore>localStorage.getItem('highscore')) {
                 console.log('highscore')
                 localStorage.setItem('highscore', totalScore);
             }
+
             totalScore = 0;
             bullet = false;
             bulletFired = false;
             bulletMoving = false;
             bulletLoader = 0;
         }
+        
         for (var i=0; i<2; i++){
             vehicles[i].drawVehicle(ctx, i, vehicles);
         }
     }
+
     if (!startGame) {
         startScreen.style.display = "block";
     }
+
     if(gameOver) {
         gameOverScreen.style.display = "block";
         gameOverText.innerText = "Your highscore is " + highScore +". Come on! You can beat it. Play again!";
@@ -112,7 +117,6 @@ function bulletLogic(){
         bulletMoving = true;
     }
 
-
     if(bulletMoving){
         if(bulletObj.positionY >= -bulletObj.sizeY){
             bulletObj.drawBullet(ctx, allAssets[7]);
@@ -133,7 +137,9 @@ function scoreCalc(){
             }
         }
     }
+
     if (totalScore>highScore) highScore = totalScore;
+
     scoreBoard.innerText = "SCORE: " + totalScore;
     highScoreBoard.innerText = "HIGH SCORE: " + highScore;
 }
@@ -142,28 +148,32 @@ function scoreCalc(){
 function drawAndMoveRoad(){
     road1PositionY += playerObj.speed;
     road2PositionY += playerObj.speed;
+
     if (road1PositionY > canvas.height){
         road1PositionY = -canvas.height;
         road2PositionY = 0;
     }
+
     if (road2PositionY > canvas.height){
         road2PositionY = -canvas.height;
         road1PositionY = 0;
     }
+
     ctx.drawImage(allAssets[1], canvas.width/2-(canvas.width/6), road1PositionY, canvas.width/3, canvas.height);
     ctx.drawImage(allAssets[1], canvas.width/2-(canvas.width/6), road2PositionY, canvas.width/3, canvas.height);
 }
-
 
 requestAnimationFrame(drawCanvas)
 
 // get keydown for user input computation
 window.addEventListener('keydown', function(event) {
     const key = event.key;
+
     if(!startGame) {
         startGame = true;
         startScreen.style.display = "none";
     }
+
     if (startGame && !gameOver){
         switch(key){
             case "ArrowRight":
@@ -181,6 +191,7 @@ window.addEventListener('keydown', function(event) {
                 }
         }
     }
+
     if(gameOver && key == "Enter"){
         gameOver = false;
         gameOverScreen.style.display = "none";

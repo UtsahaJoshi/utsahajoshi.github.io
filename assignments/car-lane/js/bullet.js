@@ -19,13 +19,13 @@ function Bullet(){
     this.collision = function(vehicles){
         for(var i=0; i<vehicles.length;i++){
             if (this.positionX < vehicles[i].lanePositions[vehicles[i].lane] + (vehicles[i].sizeX-25) &&
-                    this.positionX + (this.sizeX-25) > vehicles[i].lanePositions[vehicles[i].lane] &&
-                    this.positionY < vehicles[i].positionY + (vehicles[i].sizeY-25) &&
-                    this.positionY + (this.sizeY-25) > vehicles[i].positionY) {
-                        vehicles[i].lane = Math.floor(Math.random()*2)
-                        vehicles[i].positionY = -vehicles[i].sizeY * (Math.floor(Math.random()*5)+3)
-                        vehicles[i].collisionBetweenVehicles(i, vehicles)
-                        return true;
+                this.positionX + (this.sizeX-25) > vehicles[i].lanePositions[vehicles[i].lane] &&
+                this.positionY < vehicles[i].positionY + (vehicles[i].sizeY-25) &&
+                this.positionY + (this.sizeY-25) > vehicles[i].positionY) {
+                    vehicles[i].lane = Math.floor(Math.random()*2)
+                    vehicles[i].positionY = -vehicles[i].sizeY * (Math.floor(Math.random()*5)+3)
+                    vehicles[i].collisionBetweenVehicles(i, vehicles)
+                    return true;
              }
         }
     }

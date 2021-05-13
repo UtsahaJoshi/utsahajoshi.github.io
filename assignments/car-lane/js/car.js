@@ -49,10 +49,10 @@ function Car(){
     this.collision = function(vehicles){
         for(var i=0; i<vehicles.length;i++){
             if (this.positionX < vehicles[i].lanePositions[vehicles[i].lane] + (vehicles[i].sizeX-25) &&
-                    this.positionX + (this.sizeX-25) > vehicles[i].lanePositions[vehicles[i].lane] &&
-                    this.positionY < vehicles[i].positionY + (vehicles[i].sizeY-25) &&
-                    this.positionY + (this.sizeY-25) > vehicles[i].positionY) {
-                        return true;
+                this.positionX + (this.sizeX-25) > vehicles[i].lanePositions[vehicles[i].lane] &&
+                this.positionY < vehicles[i].positionY + (vehicles[i].sizeY-25) &&
+                this.positionY + (this.sizeY-25) > vehicles[i].positionY) {
+                    return true;
              }
         }
     }.bind(this);

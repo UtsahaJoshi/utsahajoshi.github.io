@@ -45,6 +45,7 @@ function Vehicle(){
             this.randomAssetIndex = Math.floor(Math.random()*5) + 2;
             this.collisionBetweenVehicles(index, vehicles)
         }
+        
         ctx.drawImage(this.asset[this.randomAssetIndex], this.lanePositions[this.lane], this.positionY, this.sizeX, this.sizeY);
         this.positionY += this.speed;
         this.speed = this.speed + 0.002;

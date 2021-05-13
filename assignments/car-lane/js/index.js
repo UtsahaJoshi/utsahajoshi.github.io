@@ -46,7 +46,7 @@ function createVehicles() {
     vehicles = [];
     for (var i=0; i<2; i++){
         vehicles[i] = new Vehicle();
-        vehicles[i].vehicleInstance(i, vehicles, allAssets, canvas, 5)
+        vehicles[i].vehicleInstance(i, vehicles, allAssets, canvas, playerObj.speed)
     }
 }
 
@@ -88,7 +88,7 @@ function menuLogic(){
         }
 
         for (var i=0; i<2; i++){
-            vehicles[i].drawVehicle(ctx, i, vehicles);
+            vehicles[i].drawVehicle(ctx, i, vehicles, playerObj.speed);
         }
     }
 
@@ -97,6 +97,7 @@ function menuLogic(){
     }
 
     if(gameOver) {
+        fireBulletText.style.display = "none";
         gameOverScreen.style.display = "block";
         gameOverText.innerText = "Your highscore is " + highScore +". Come on! You can beat it. Play again!";
     }
@@ -171,7 +172,7 @@ window.onload = function(){
 // get keydown for user input computation
 window.addEventListener('keydown', function(event) {
     const key = event.key;
-    
+
     scoreBoard.style.display = "block";
     highScoreBoard.style.display = "block";
 
@@ -201,5 +202,6 @@ window.addEventListener('keydown', function(event) {
     if(gameOver && key == "Enter"){
         gameOver = false;
         gameOverScreen.style.display = "none";
+        playerObj.speed = 12;
     }
 });

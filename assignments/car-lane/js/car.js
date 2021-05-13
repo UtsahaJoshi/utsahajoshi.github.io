@@ -11,7 +11,7 @@ function Car(){
             2: canvas.width/2+(canvas.width/15.2)
         }
         this.positionY = canvas.height - (this.sizeY+this.sizeY/10);
-        this.speed = 8;
+        this.speed = 12;
     }.bind(this);
 
     //switch lane logic
@@ -61,7 +61,7 @@ function Car(){
     var setPlayerCarNewPos = function(){
         var moveTo = this.playerLane.indexOf(true);
         this.speed = this.speed + 0.005;
-        if (this.speed > 25) this.speed = 25;
+        if (this.speed > 30) this.speed = 30;
     
         if (this.positionX < this.lanePositions[moveTo]){
             this.positionX += this.speed * 2;

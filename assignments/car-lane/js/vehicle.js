@@ -32,23 +32,23 @@ function Vehicle(){
                     this.positionY < vehicles[i].positionY + vehicles[i].sizeY &&
                     vehicles[i].positionY + vehicles[i].sizeY > vehicles[i].positionY) {
                         (this.lane !== 2) ? this.lane = 2 : this.lane = Math.floor(Math.random()*2)
-                        this.positionY = -this.sizeY * (Math.floor(Math.random()*2)+3)
+                        this.positionY = -this.sizeY * (Math.floor(Math.random()*2)+4)
                  }
             }
     }.bind(this);
 
     //draw vehicle to the canvas
-    this.drawVehicle = function(ctx, index, vehicles){
+    this.drawVehicle = function(ctx, index, vehicles, speed){
+        this.speed = speed;
         if(this.positionY>this.canvas.height + this.sizeY){
             this.positionY = -this.sizeY * (Math.floor(Math.random()*3)+1)
             this.lane = Math.floor(Math.random() * 3);
             this.randomAssetIndex = Math.floor(Math.random()*5) + 2;
             this.collisionBetweenVehicles(index, vehicles)
         }
-        
+
         ctx.drawImage(this.asset[this.randomAssetIndex], this.lanePositions[this.lane], this.positionY, this.sizeX, this.sizeY);
         this.positionY += this.speed;
-        this.speed = this.speed + 0.002;
-        if (this.speed>15) this.speed = 15;
+        if (this.speed>25) this.speed = 25;
     }.bind(this);
 }

@@ -1,4 +1,5 @@
 function Car(){
+    //initialize car object with variables
     this.carInstance = function(canvas){
         this.playerLane = [false, true, false]
         this.sizeX = canvas.width/16;
@@ -13,6 +14,7 @@ function Car(){
         this.speed = 8;
     }.bind(this);
 
+    //switch lane logic
     this.switchLane = function(laneDirection){
         switch(laneDirection){
             case "right":
@@ -37,11 +39,13 @@ function Car(){
         }
     }.bind(this);
 
+    //draw player car on canvas
     this.drawPlayerCar = function(ctx, asset){
         setPlayerCarNewPos();
         ctx.drawImage(asset, this.positionX, this.positionY, this.sizeX, this.sizeY);
     }.bind(this);
 
+    //check for collision with vehicles
     this.collision = function(vehicles){
         for(var i=0; i<vehicles.length;i++){
             if (this.positionX < vehicles[i].lanePositions[vehicles[i].lane] + (vehicles[i].sizeX-25) &&
@@ -53,6 +57,7 @@ function Car(){
         }
     }.bind(this);
 
+    //sets a new positionX for the car according to lane
     var setPlayerCarNewPos = function(){
         var moveTo = this.playerLane.indexOf(true);
         this.speed = this.speed + 0.005;

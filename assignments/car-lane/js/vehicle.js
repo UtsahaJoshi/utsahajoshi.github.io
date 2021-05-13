@@ -1,7 +1,7 @@
 function Vehicle(){
-    this.vehicleInstance = function(index, vehicles, asset, canvas, direction, speed){
+    //initialize vehicle object with variables
+    this.vehicleInstance = function(index, vehicles, asset, canvas, speed){
         this.asset = asset;
-        this.direction = direction;
         this.speed = speed;
         this.lane = Math.floor(Math.random() * 3);
         this.sizeX = canvas.width/14;
@@ -19,9 +19,12 @@ function Vehicle(){
             1: canvas.width/2-(canvas.width/30),
             2: canvas.width/2+(canvas.width/15.5)
         }
-        this.collisionBetweenVehicles(index, vehicles)
-    }
 
+        //get new position if spawn collision
+        this.collisionBetweenVehicles(index, vehicles)
+    }.bind(this);
+
+    //function to detect collision while spawning and re-spawn
     this.collisionBetweenVehicles = function(index, vehicles){
             for(var i=0; i<vehicles.length;i++){
                 if ((i != index) && this.lanePositions[this.lane] < vehicles[i].lanePositions[vehicles[i].lane] + vehicles[i].sizeX &&
@@ -34,6 +37,7 @@ function Vehicle(){
             }
     }.bind(this);
 
+    //draw vehicle to the canvas
     this.drawVehicle = function(ctx, index, vehicles){
         if(this.positionY>this.canvas.height + this.sizeY){
             this.positionY = -this.sizeY * (Math.floor(Math.random()*3)+1)
@@ -46,6 +50,4 @@ function Vehicle(){
         this.speed = this.speed + 0.002;
         if (this.speed>15) this.speed = 15;
     }.bind(this);
-
-
 }

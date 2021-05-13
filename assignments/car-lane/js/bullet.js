@@ -1,4 +1,6 @@
 function Bullet(){
+
+    //initial bullet with variables
     this.bulletInit = function(canvas, positionX){
         this.positionX = positionX;
         this.sizeX = canvas.width/20;
@@ -6,10 +8,14 @@ function Bullet(){
         this.positionY = canvas.height;
         this.speed = 30;
     }
+
+    //draw the bullet on the canvas
     this.drawBullet = function(ctx, asset){
         ctx.drawImage(asset, this.positionX, this.positionY, this.sizeX, this.sizeY);
         this.positionY -= this.speed;
     }
+
+    //check for vehicle collision with bullet
     this.collision = function(vehicles){
         for(var i=0; i<vehicles.length;i++){
             if (this.positionX < vehicles[i].lanePositions[vehicles[i].lane] + (vehicles[i].sizeX-25) &&

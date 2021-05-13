@@ -2,15 +2,18 @@
     padding: 0px;
     margin: 0px;
 }
+
 body{
     overflow: hidden;
     background-color: skyblue;
     position: relative;
     font-family: 'Muli';
 }
+
 .image-assets{
     display: none;
 }
+
 #score{
     position: absolute;
     top: 10px;
@@ -42,6 +45,7 @@ body{
     display: none;
     color: #ffffff;
 }
+
 #game-over-screen{
     position: absolute;
     top: 30%;
@@ -55,6 +59,7 @@ body{
     display: none;
     color: #ffffff;
 }
+
 #fire-bullet-screen{
     position: absolute;
     top: 60%;
@@ -67,14 +72,17 @@ body{
     padding:20px;
     color: #FF0000;
 }
+
 #fire-bullet-text{
     display: none;
     background-color: #ffffff;
     border-radius: 5px;
 }
+
 #game-over-text{
     padding: 20px;
 }
+
 #instructions{
     padding: 20px;
 }

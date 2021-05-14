@@ -1,0 +1,32 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background: linear-gradient(#484e55,#3a3f44 60%,#313539) fixed;
+    width: 100%;
+}
+
+.logo-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    padding: 50px;  
+}
+.canvas-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-assets{
+    display: none;
+}
+
+@font-face {
+    font-family: 'Flappy';
+    font-style: normal;
+    font-weight: 400;
+    src:url(../font/FB.woff) format('truetype');
+  }
